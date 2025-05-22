@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Manikanta's Code Editor</title>
-  <style>
-    body { font-family: monospace; background: #222; color: #eee; margin: 0; padding: 10px; }
-    select, textarea { width: 100%; font-family: monospace; font-size: 16px; margin-bottom: 10px; }
-    textarea { height: 400px; background: #111; color: #0f0; padding: 10px; border: none; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Manikanta's Code Editor</title>
+<style>
+  body {
+    font-family: monospace;
+    background: #222;
+    color: #eee;
+    margin: 0;
+    padding: 10px;
+  }
+  select, textarea {
+    width: 100%;
+    font-family: monospace;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  textarea {
+    height: 400px;
+    background: #111;
+    color: #0f0;
+    padding: 10px;
+    border: none;
+    resize: vertical;
+  }
+</style>
 </head>
 <body>
   <h2>Manikanta Venkateswarlu - Offline Code Editor</h2>
@@ -20,8 +40,18 @@
 
   <script>
     const templates = {
-      cpp: `#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << "Hello, Manikanta!\\n";\n    return 0;\n}`,
-      java: `public class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, Manikanta!");\n    }\n}`,
+      cpp: `#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, Manikanta!" << endl;
+    return 0;
+}`,
+      java: `public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, Manikanta!");
+    }
+}`,
       python: `print("Hello, Manikanta!")`
     };
 
@@ -30,7 +60,7 @@
       document.getElementById('code').value = templates[lang];
     }
 
-    // Initialize editor with C++ code
+    // Initialize with C++ code
     setTemplate();
   </script>
 </body>
